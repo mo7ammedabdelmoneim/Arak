@@ -1,0 +1,138 @@
+﻿<Window x:Class="Intrface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Intrface"
+        mc:Ignorable="d"
+        Title="Aark" Height="560" Width="750"
+        Background="White" WindowStartupLocation="CenterScreen" >
+    <Window.Resources>
+        <Style x:Key="MainBorderButtonStyleKey">
+            <Style.Setters>
+                <Setter Property="Border.Background" Value="#4267B2"></Setter>
+                <Setter Property="Border.BorderThickness" Value="0"></Setter>
+                <Setter Property="Border.BorderBrush" Value="Transparent"></Setter>
+                <Setter Property="Border.CornerRadius" Value="20"></Setter>
+                <Setter Property="Border.Margin" Value="0 10"></Setter>
+            </Style.Setters>
+        </Style>
+        <Style x:Key="MainButtonStyleKey">
+            <Style.Setters>
+                <Setter Property="Control.Background" Value="Transparent"></Setter>
+                <Setter Property="Control.Foreground" Value="White"></Setter>
+                <Setter Property="Control.BorderThickness" Value="0"></Setter>
+                <Setter Property="Control.BorderBrush" Value="Transparent"></Setter>
+                <Setter Property="Control.FontSize" Value="24"></Setter>
+                <Setter Property="Control.FontWeight" Value="Medium"></Setter>
+                <Setter Property="Control.Height" Value="50"></Setter>
+            </Style.Setters>
+        </Style>
+
+    </Window.Resources>
+    <Grid Margin="0,0,-0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#4267B2" CornerRadius="10" Margin="10 0 "  >
+            <TextBlock Text="Arak"
+                     Foreground="White"
+                     FontSize="36"
+                     FontWeight="Bold"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"/>
+        </Border>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Menu -->
+            <StackPanel Grid.Column="0"   Background="White">
+                <Border Grid.Row="0" Style="{StaticResource MainBorderButtonStyleKey}"  Margin="0 10" CornerRadius="20" >
+                    <Button Content="E-Day" Style="{StaticResource MainButtonStyleKey }" Click="Button_Click" />
+                </Border>
+                <Border x:Name="BrailleSession" Grid.Row="0" Style="{StaticResource MainBorderButtonStyleKey}"  Margin="0 10" CornerRadius="20" >
+                    <Button Content="Braille Session" Style="{StaticResource MainButtonStyleKey }" Click="BrailleSession_Click" />
+                </Border>
+                <Border Grid.Row="0" Style="{StaticResource MainBorderButtonStyleKey}"  Margin="0 10" CornerRadius="20" >
+                    <Button Content="Students" Style="{StaticResource MainButtonStyleKey }" Click="OpenStudentsWindow" />
+                </Border>
+                <Border Grid.Row="0" Style="{StaticResource MainBorderButtonStyleKey}"  Margin="0 10" CornerRadius="20" >
+                    <Button Content="Teachers" Style="{StaticResource MainButtonStyleKey }" Click="OpenTeachersWindow" />
+                </Border>
+                <Border Grid.Row="0" Style="{StaticResource MainBorderButtonStyleKey}"  Margin="0 10" CornerRadius="20" >
+                    <Button Content="Month Exams" Style="{StaticResource MainButtonStyleKey }" Click="OpenMonthExamsWindow" />
+                </Border>
+            </StackPanel>
+
+            
+
+
+            <!-- Right Content Area -->
+            <Border Grid.Column="1"
+                    Margin="20,0,0,0"
+                    
+                    Width="Auto"
+                    CornerRadius="5">
+                <Grid>
+                    <Image Stretch="Fill" Width="400" Source="/Images/FB_IMG_1737574413529.jpg" />
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Footer -->
+
+        <!-- Left Counter -->
+
+
+        <Border Visibility="Visible" Grid.Row="2" Style="{StaticResource MainBorderButtonStyleKey}" HorizontalAlignment="Left" Width="200" Margin="20 0 0 10" CornerRadius="20" >
+            <Button   Content="Braille Courses" Width="200" Height="50" Style="{StaticResource MainButtonStyleKey }" Click="OpenBrailleCoursesWindow" />
+        </Border>
+        
+        <StackPanel Orientation="Horizontal" 
+                HorizontalAlignment="Right" 
+                 VerticalAlignment="Center" Grid.Row="2" >
+            <Border 
+                     Width="80"  
+                     Height="40"
+                     HorizontalAlignment="Right"
+                     Margin="0,0,10,0"
+                     BorderBrush="#4267B2"
+                     BorderThickness="1"
+                     CornerRadius="20">
+            <TextBlock x:Name="LeftCounter" ToolTip="Sessions Within This Month"
+                      Foreground="#4267B2"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                        FontWeight="Bold"
+                        FontSize="20"/>
+            </Border>
+
+            <!-- Right Counter -->
+            <Border 
+             Width="80" 
+             Height="40"
+             HorizontalAlignment="Right"
+             Margin="0,0,15,0"
+             BorderBrush="#4267B2"
+             BorderThickness="1"
+             CornerRadius="20">
+                <TextBlock ToolTip="Sessions Within Whole Term"
+                x:Name="RightCounter"
+                  Foreground="#4267B2"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                    FontWeight="Bold"
+                  FontSize="20"/>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

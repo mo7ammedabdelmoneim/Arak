@@ -1,0 +1,569 @@
+﻿<Window x:Class="Intrface.MonthExams.InsideClass"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Intrface.MonthExams"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="InsideClass" Height="600" Width="800">
+    <Window.Resources>
+        <Style x:Key="SearchBtnkey">
+            <Style.Setters>
+                <Setter Property="Control.Foreground"  Value="#4267B2" ></Setter>
+                <Setter Property="Control.Background"  Value="Transparent" ></Setter>
+                <Setter Property="Control.FontSize"  Value="24" ></Setter>
+                <Setter Property="Control.FontWeight"  Value="Bold" ></Setter>
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#4267B2" Margin="10 0 " CornerRadius="10">
+            <Grid>
+                <Button HorizontalAlignment="Left" 
+                Margin="20,0,0,0"
+                Width="40" Height="40"
+                Background="Transparent"
+                BorderThickness="0" Click="BackToLastScreen">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Ellipse Width="40" Height="40" Fill="White" Margin="-2,-2,0,0"/>
+                            <Polyline Points="27,15 15,20 27,27  " StrokeThickness="2" Stroke="#4267B2" Margin="-2,-2,2,2" />
+                        </Grid>
+                    </Button.Content>
+                </Button>
+
+                <TextBlock x:Name="HeaderText" Text="Arak"
+                 Foreground="White"
+                 FontSize="36"
+                 FontWeight="Bold"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"/>
+
+                <Border HorizontalAlignment="Right"
+                Margin="0,0,20,0"
+                Background="White"
+                CornerRadius="15" Height="35"
+                Padding="10,5">
+                    <Button Click="BackButtonClick" Foreground="#4267B2" 
+                    BorderBrush="Transparent" Background="Transparent" 
+                    FontSize="16" FontWeight="Bold" >Home</Button>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Content -->
+        <TextBlock Margin="30 15 " Grid.Row="1" Text="Students:" FontSize="28"  FontWeight="Medium"/>
+        <ScrollViewer Grid.Row="1" Margin="60 60 0 0" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+
+                <!-- Student Rows -->
+                <StackPanel>
+                    <!-- Student 1 -->
+                    <Grid x:Name="Container1" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student1" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue1" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn1" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn1" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 2 -->
+                    <Grid x:Name="Container2" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student2" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue2" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn2" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn2" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 3 -->
+                    <Grid x:Name="Container3" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student3" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue3" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn3" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn3" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 4 -->
+                    <Grid x:Name="Container4" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student4" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue4" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn4" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn4" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 5 -->
+                    <Grid x:Name="Container5" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student5" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue5" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn5" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn5" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 6 -->
+                    <Grid x:Name="Container6" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student6" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue6" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn6" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn6" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 7 -->
+                    <Grid x:Name="Container7" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student7" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue7" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn7" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn7" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 8 -->
+                    <Grid x:Name="Container8" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student8" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue8" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn8" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn8" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 9 -->
+                    <Grid x:Name="Container9" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student9" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue9" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn9" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn9" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 10 -->
+                    <Grid x:Name="Container10" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student10" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue10" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn10" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn10" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 11 -->
+                    <Grid x:Name="Container11" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student11" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue11" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn11" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn11" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 12 -->
+                    <Grid x:Name="Container12" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student12" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue12" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn12" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn12" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 1 -->
+                    <Grid x:Name="Container13" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student13" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue13" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn13" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn13" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 14 -->
+                    <Grid x:Name="Container14" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student14" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue14" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+                        
+                        
+                            <Button Height="41"  Name="AddExamBtn14" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                                <Button.Content>
+                                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                        <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                    </Border>
+                                </Button.Content>
+                            </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn14" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- Student 15 -->
+                    <Grid x:Name="Container15" Visibility="Collapsed" Margin="0 0 0 15">
+                        <TextBlock Text="Student1 Student1 Student1 " Name="Student15" FontSize="20" Width="270" FontWeight="Medium" Foreground="#FF615A5A"
+                             VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="PerfomanceValue15" Text="00%" Margin="270 0 0 0 "
+                             Foreground="#4267B2" FontSize="20" FontWeight="Bold" 
+                             VerticalAlignment="Center"/>
+
+
+                        <Button Height="41"  Name="AddExamBtn15" Click="AddExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 130 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95">
+                                    <TextBlock Text="Add" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center"  Foreground="White"
+                                                Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+
+                        <Button  Height="41"  Name="ViewExamBtn15" Click="ViewExamBtn_Click"
+                                        BorderThickness="0" Background="Transparent" Margin=" 0 0 40 0"
+                                         HorizontalAlignment="Right"  >
+                            <Button.Content>
+                                <Border  CornerRadius="15"  HorizontalAlignment="Left" Width="80" Height="35.95"
+                                             BorderBrush="#4267B2" BorderThickness="1" >
+                                    <TextBlock Text="View" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" 
+                                             Style="{StaticResource SearchBtnkey}" VerticalAlignment="Center"></TextBlock>
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+</Window>
