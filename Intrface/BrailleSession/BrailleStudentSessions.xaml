@@ -1,0 +1,137 @@
+﻿<Window x:Class="Intrface.BrailleSession.BrailleStudentSessions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Intrface.BrailleSession"
+        mc:Ignorable="d"
+        Title="BrailleStudentSessions" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="white" >
+    <Window.Resources>
+        <Style x:Key="SearchBtnkey">
+            <Style.Setters>
+                <Setter Property="Control.Foreground"  Value="White" ></Setter>
+                <Setter Property="Control.Background"  Value="#4267B2" ></Setter>
+                <Setter Property="Control.FontSize"  Value="24" ></Setter>
+                <Setter Property="Control.FontWeight"  Value="Bold" ></Setter>
+            </Style.Setters>
+        </Style>
+        <Style x:Key="SearchBtnBorderkey">
+            <Style.Setters>
+                <Setter Property="Control.Foreground"  Value="#4267B2" ></Setter>
+                <Setter Property="Control.Background"  Value="Transparent" ></Setter>
+                <Setter Property="Control.FontSize"  Value="24" ></Setter>
+                <Setter Property="Control.FontWeight"  Value="Bold" ></Setter>
+            </Style.Setters>
+        </Style>
+        
+        <Style  x:Key="textBlockkey">
+            <Style.Setters>
+                <Setter Property="Control.Foreground" Value="White"></Setter>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Foreground" Value="#4267B2"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#4267B2" Margin="10,0,10,0" CornerRadius="10" Grid.ColumnSpan="2">
+            <Grid>
+                <Button HorizontalAlignment="Left" 
+                 Margin="20,0,0,0"
+                 Width="40" Height="40"
+                 Background="Transparent"
+                 BorderThickness="0" Click="BackToLastScreen">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Ellipse Width="40" Height="40" Fill="White" Margin="-2,-2,0,0" HorizontalAlignment="Left"/>
+                            <Polyline Points="27,15 15,20 27,27  " StrokeThickness="2" Stroke="#4267B2" Margin="-2,-2,2,2" />
+                        </Grid>
+                    </Button.Content>
+                </Button>
+
+                <TextBlock x:Name="HeaderText" Text="Arak"
+                  Foreground="White"
+                  FontSize="36"
+                  FontWeight="Bold"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"/>
+
+                <Border HorizontalAlignment="Right"
+                 Margin="0,0,20,0"
+                 Background="White"
+                 CornerRadius="15" Height="35"
+                 Padding="10,5">
+                    <Button Click="BackButtonClick" Foreground="#4267B2" 
+                     BorderBrush="Transparent" Background="Transparent" 
+                     FontSize="16" FontWeight="Bold" Height="25" VerticalAlignment="Top" >Home</Button>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!--Content-->
+        <StackPanel Grid.Row="1" Margin="30,30,20,20" Grid.ColumnSpan="2">
+            <!-- teachers List -->
+            <TextBlock Text="Sessions:" FontSize="35" FontWeight="Regular" Margin="0,0,0,20"/>
+
+            <!-- Left Side - teachers List -->
+            <StackPanel Margin="0 0 0 0 ">
+                <ListView x:Name="ListOfBrailleStudentsSessions" Grid.Column="0" Height="350"  HorizontalAlignment="Left" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                            SelectedIndex="0" BorderThickness="0" d:ItemsSource="{d:SampleData ItemCount=5}"  BorderBrush="White" >
+                    <ListView.ItemTemplate  >
+                        <DataTemplate>
+                            <Grid  Margin=" 0 10" Width="450" >
+                                <StackPanel  HorizontalAlignment="Right">
+                                    <TextBlock x:Name="BrailleStudentsInfoIdentifier" Foreground="#FF585858" FontWeight="Medium" Text="{Binding TeacherName}" FontSize="24" HorizontalAlignment="Right" ></TextBlock>
+                                </StackPanel>
+                                <StackPanel  HorizontalAlignment="Left">
+                                    <TextBlock x:Name="BrailleStudentsInfoIdentifierq2" FontSize="12" Foreground="#4267B2" Text="{Binding Date}"  HorizontalAlignment="Right" ></TextBlock>
+                                </StackPanel>
+                                
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+        <!-- right Side -->
+        <Grid Grid.Row="1" Grid.Column="1">
+            <StackPanel Margin="50 70 0 0 " >
+                <StackPanel Orientation="Horizontal" Margin="0 10">
+                    <TextBlock Text="Month Sessions: " FontSize="17" FontWeight="Medium" Foreground="#FF585858" />
+                    <TextBlock x:Name="MonthSesions" Text="00" FontSize="20" FontWeight="Bold" Foreground="#4267B2" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="Total Sessions: " FontSize="17" FontWeight="Medium" Foreground="#FF585858" />
+                    <TextBlock x:Name="TotalSesions" Text="00" FontSize="20" FontWeight="Bold" Foreground="#4267B2" />
+                </StackPanel>
+            </StackPanel>
+            <Button Height="55" Click="AddBrailleSession_Click" Width="220"
+                     BorderThickness="0" Background="Transparent" Margin=" 0 380 0 0">
+                        <Button.Content>
+                    <Border Background="#4267B2"  CornerRadius="15"  HorizontalAlignment="Left" Width="220"  Height="50">
+                        <TextBlock Text="Add Session" FontSize="24" FontWeight="Regular" HorizontalAlignment="Center"  Foreground="White"
+                     Style="{StaticResource SearchBtnkey}" VerticalAlignment="Bottom" Margin="0,0,0,9"></TextBlock>
+                    </Border>
+                </Button.Content>
+            </Button>
+        </Grid>
+
+    </Grid>
+</Window>
